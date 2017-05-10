@@ -208,17 +208,7 @@ Recht nahe am optimalen Algorithmus und aufwändig zu realisieren, da bei jedem
 
 Am einfachsten ist eine nach der Nutzung sortierte Liste.
 
-Implementiert werden heute meistens
-
-Pseudo-LRU-Algorithmen
-
-(mit M/R-Bit), s.o.
-
-Clock- Page
-
-und
-
-Second Chance
+Implementiert werden heute meistens Pseudo-LRU-Algorithmen (mit M/R-Bit), s.o. Clock- Page und Second Chance.
 
 ### NFU (Not Frequently Used)
 
@@ -231,18 +221,3 @@ Seitentabelleneintrag mit Zähler für Zugriffe
 Positiv: weniger Umhängeoperationen als bei LRU
 
 Negativ: älterer vorher frequentierte Einträge werden nicht ausgelagert (Aging)
-
-=> Übungsaufgaben
-
-## Shared Memory
-
-Durch ein virtuelles Speichermodell wird auch die gemeinsame Nutzung eines Speicherbereichs durch mehrere Prozesse ermöglicht.
-
-Dieser Speicher kann Read-Only (Shared-Library/DLL) oder auch zur Interprocesscommunication (IPC) genutzt werden.
-
-Gemeinsame Codeteile müssen wiedereintrittfähig (reentrantfähig/ threadsafe) sein!
-
-Gemeinsamer Speicher muss per Semaphoren, Monitore geschützt werden.
-
-
-

@@ -21,7 +21,7 @@
   _Man könnte noch für jeden Prozess eine virtuelle CPU dazuzählen_
 
 ##Prozesserzeugung
-* Initialisierung des Systems
+* Initialisierung des Systems (Kernel, init-System)
 * Systemaufruf zum Erzeugen eines Prozesses durch einen anderen Prozess
 * Benutzeranfrage, einen neuen Prozess zu erzeugen
 * Initiierung einer Stapelverarbeitung (Batch-Job)
@@ -110,11 +110,10 @@ _Unterbrechende Scheduler teilen die CPU von vornherein nur für eine bestimmte 
 ##Probleme von Scheduler
 
 * die benötigten Betriebsmittel für die einzelnen Prozesse nicht im Vorfeld bekannt
-
-* CPU Zeit - Scheduler muss dynamisch reagieren, Probleme sind:
+  * CPU Zeit
+* Scheduler muss dynamisch reagieren, Probleme sind:
   * Starvation
   * Fairness
-  * ​
 
 
 #  Schedulerstrategien
@@ -175,8 +174,6 @@ Sind die einzelnen Zeitspannen unterschiedlich groß, so spricht man von Weighte
 
 ## Weitere Verfahren
 
-Priority Scheduler
-
 SRTF – Shortest Remaining Time First
 
 Multilevel-Scheduler
@@ -189,4 +186,20 @@ Multilevel feedback queue
 
 …
 
+## Angewandte Schedulerverfahren
 
+| Operating  System                        | Preemption | Algorithm                                |
+| ---------------------------------------- | ---------- | ---------------------------------------- |
+| Amiga  OS                                | Yes        | Prioritized Round-robin  scheduling      |
+| FreeBSD                                  | Yes        | Multilevel  feedback  queue              |
+| Linux  kernel before 2.6.0               | Yes        | Multilevel  feedback  queue              |
+| Linux  kernel 2.6.0–2.6.23               | Yes        | O(1)  scheduler                          |
+| Linux  kernel after 2.6.23               | Yes        | Completely  Fair Scheduler               |
+| Mac  OS pre-9                            | None       | Cooperative  Scheduler                   |
+| Mac  OS 9                                | Some       | Preemptive  for MP tasks, Cooperative Scheduler for processes and threads |
+| Mac  OS X                                | Yes        | Multilevel  feedback  queue              |
+| NetBSD                                   | Yes        | Multilevel  feedback  queue              |
+| Solaris                                  | Yes        | Multilevel  feedback  queue              |
+| Windows  3.1x                            | None       | Cooperative  Scheduler                   |
+| Windows  95, 98, Me                      | Half       | Preemptive  for 32-bit processes, Cooperative Scheduler for 16-bit processes |
+| Windows  NT (including 2000, XP, Vista, 7, and Server) | Yes        | Multilevel  feedback  queue              |
